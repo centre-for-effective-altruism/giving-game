@@ -1,35 +1,178 @@
-<!doctype html>
-<html lang="en-US">
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
-  <!-- Place favicon.ico in the root directory -->
-
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/style.css">
-
-</head>
-
-<body>
-
-  <!-- Add your site or application content here -->
-  <p>Home Page</p>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
-</body>
-
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Giving Game</title>
+		<!-- Skip the line below if you're already using jQuery --><script src="https://www.guidedtrack.com/assets/jquery_gt.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://www.guidedtrack.com/assets/interpreter.js"></script>
+		<!-- Skip the line below if you're already using Bootstrap --><link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/guidedtrack.css">
+		<style>
+		.progress-bar {
+		background: rgb(108, 0, 0, .6) !important;
+		color: white !important;
+		}
+		.progress {
+		margin-top: 10px !important;
+		}
+		body {
+			background: #6c0000;
+			color: #fff;
+			padding-top: 0;
+		}
+		#imgheader {
+		background: url(/gg_gwwc.png) #FFF center no-repeat;
+		width: 100%;
+		background-size: 300px;
+		position: fixed;
+		display: block;
+		height: 100px;
+		z-index: 1;
+		}
+		.h1, .h2, .h3, h1, h2, h3 {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		}
+		.btn-block {
+			white-space: normal !important;
+			word-wrap: break-word !important;
+		}
+		.btn-default, ul.button-group, ul.button-group li, .input-group-addon {
+		border-color: #6c0000;
+		}
+		.program_container .main .answers-grid {
+			background-color: #6c0000;
+		}
+		.btn-default, ul.button-group, .input-group-addon, .input-group-addon:hover {
+		color: #6c0000;
+		background-color: #fff;
+		}
+		.input-group-addon:hover, .input-group-addon {
+			border-color: #fff;
+		}
+		.btn-default:hover{
+		color: #6c0000;
+		background-color: #fff;
+		border-color: #fff;
+		}
+		.program_container .tip {
+			color: #ededed;
+		}
+		.program_container .main .slider-answer-widget .slider-selection {
+			background-color: #470000
+		}
+		a, a:hover, a:visited, a:active {color: #fff;}
+		.btn-primary {
+		color: #fff;
+		background-color: #470000;
+		border-color: #470000;
+		}
+		.btn-primary:hover, .btn-primary:active {
+		color: #fff;
+		background-color: #470000;
+		border-color: #470000;
+		}
+		.slider-handle, .progress-bar, .loading, .answer_submit, .program_container .answer_textbox .answer_submit {
+		color: #6c0000;
+		background-color: #fff;
+		border-color: #fff;
+		}
+		#run-menu {
+		padding-top: 15px;
+		font-size: 1.2em;
+		}
+		.program_container .main .answers-grid .picture-enabled {
+		background: #fff;
+		color: #6c0000;
+		}
+		#run-menu {
+			float:right;
+		}
+		.main {padding-top: 20px;}
+		.program_container .main {
+			background:#6c0000;
+			text-align:center;
+		}
+		.program_container {
+			padding-top: 100px;
+		}
+		.gameSlider .slider-label{
+		max-width: 20% !important;
+		min-width: 20% !important;
+		width: 20% !important;
+		}
+		.gameSlider .slider{
+		max-width: 60% !important;
+		min-width: 60% !important;
+		width: 60% !important;
+		}
+		.slider-answer-widget{
+		width: 100% !important;
+		margin: 0px;
+		padding: 0px;
+		margin-left: 8px;
+		margin-right: 8px;
+		}
+		.slider{
+		width: 50% !important;
+		height: auto !important;
+		margin: 0px;
+		}
+		.slider-track{
+		opacity: 1.0 !important;
+		box-shadow: none !important;
+		-webkit-box-shadow: none !important;
+		}
+		.slider-selection{
+		opacity: 1.0 !important;
+		box-shadow: none !important;
+		-webkit-box-shadow: none !important;
+		}
+		.slider-label{
+		width: 25%;
+		margin: 0px;
+		}
+		.slider-label.right{
+		text-align: right;
+		margin: 0px !important;
+		overflow-x: hidden;
+		}
+		.slider-label.left{
+		text-align: left;
+		margin: 0px !important;
+		overflow-x: hidden;
+		}
+		.slider-handle {
+			background-color: #6c0000;
+			background-image: linear-gradient(to bottom, #470000 80%, #012b2d 100%) !important;
+		opacity: 1.0 !important;
+		box-shadow: none !important;
+		-webkit-box-shadow: none !important;
+		}
+		</style>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+		<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<!--		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-10056556-1"></script> -->
+<!--		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-10056556-1');
+		</script>
+-->
+	</head>
+	<body>
+		<div id="imgheader"></div>
+		<div aria-live='polite' class='guidedtrack program_container col-md-8 col-md-offset-2' data-environment='production' id='ehxbhjl'>
+			<div id='run-menu'></div>
+			<div class='points'>
+				<div class='total'></div>
+				<div class='change positive'></div>
+			</div>
+			<div class='maintain'></div>
+			<div class='main'></div>
+		</div>
+	</body>
 </html>
