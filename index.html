@@ -9,18 +9,7 @@
 		<!-- Skip the line below if you're already using Bootstrap --><link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/guidedtrack.css">
 		<style>
-		.progress-bar {
-		background: rgb(108, 0, 0, .6) !important;
-		color: white !important;
-		}
-		.progress {
-		margin-top: 10px !important;
-		}
-		body {
-			background: #6c0000;
-			color: #fff;
-			padding-top: 0;
-		}
+
 		#imgheader {
 		background: url(//images.ctfassets.net/dhpcfh1bs3p6/5DGZqHLylHzuHY6uN9KOJc/d0ece177e4b83688c66d2cb81b5522b2/gg_gwwc.jpg) #FFF center no-repeat;
 		width: 100%;
@@ -34,122 +23,47 @@
 		margin-top: 20px;
 		margin-bottom: 20px;
 		}
-		.btn-block {
-			white-space: normal !important;
-			word-wrap: break-word !important;
-		}
-		.btn-default, ul.button-group, ul.button-group li, .input-group-addon {
-		border-color: #6c0000;
-		}
-		.program_container .main .answers-grid {
-			background-color: #6c0000;
-		}
-		.btn-default, ul.button-group, .input-group-addon, .input-group-addon:hover {
-		color: #6c0000;
-		background-color: #fff;
-		}
-		.input-group-addon:hover, .input-group-addon {
-			border-color: #fff;
-		}
-		.btn-default:hover{
-		color: #6c0000;
-		background-color: #fff;
-		border-color: #fff;
-		}
-		.program_container .tip {
-			color: #ededed;
-		}
-		.program_container .main .slider-answer-widget .slider-selection {
-			background-color: #470000
-		}
-		a, a:hover, a:visited, a:active {color: #fff;}
-		.btn-primary {
-		color: #fff;
-		background-color: #470000;
-		border-color: #470000;
-		}
-		.btn-primary:hover, .btn-primary:active {
-		color: #fff;
-		background-color: #470000;
-		border-color: #470000;
-		}
-		.slider-handle, .progress-bar, .loading, .answer_submit, .program_container .answer_textbox .answer_submit {
-		color: #6c0000;
-		background-color: #fff;
-		border-color: #fff;
-		}
 		#run-menu {
 		padding-top: 15px;
 		font-size: 1.2em;
-		}
-		.program_container .main .answers-grid .picture-enabled {
-		background: #fff;
-		color: #6c0000;
 		}
 		#run-menu {
 			float:right;
 		}
 		.main {padding-top: 20px;}
 		.program_container .main {
-			background:#6c0000;
-			text-align:center;
+			padding-top:40px;
 		}
 		.program_container {
 			padding-top: 100px;
 		}
-		.gameSlider .slider-label{
-		max-width: 20% !important;
-		min-width: 20% !important;
-		width: 20% !important;
+		#program_navigation #run-menu .dropdown-toggle {
+			background:inherit;
 		}
-		.gameSlider .slider{
-		max-width: 60% !important;
-		min-width: 60% !important;
-		width: 60% !important;
+		#program_navigation {
+		background-color: #fff;
+		position: fixed;
+		min-height: 40px;
+		border-bottom: 0px solid #ccc;
+		width: 100%;
+		top: 100px;
+		left:0;
+		z-index: 1;
 		}
-		.slider-answer-widget{
-		width: 100% !important;
-		margin: 0px;
-		padding: 0px;
-		margin-left: 8px;
-		margin-right: 8px;
+		#program_navigation #run-menu {
+			line-height: 40px
 		}
-		.slider{
-		width: 50% !important;
-		height: auto !important;
-		margin: 0px;
+		#program_navigation #back-button {
 		}
-		.slider-track{
-		opacity: 1.0 !important;
-		box-shadow: none !important;
-		-webkit-box-shadow: none !important;
+		.chart {
+    		background: white;
+    		border-radius: 5px;
 		}
-		.slider-selection{
-		opacity: 1.0 !important;
-		box-shadow: none !important;
-		-webkit-box-shadow: none !important;
-		}
-		.slider-label{
-		width: 25%;
-		margin: 0px;
-		}
-		.slider-label.right{
-		text-align: right;
-		margin: 0px !important;
-		overflow-x: hidden;
-		}
-		.slider-label.left{
-		text-align: left;
-		margin: 0px !important;
-		overflow-x: hidden;
-		}
-		.slider-handle {
-			background-color: #6c0000;
-			background-image: linear-gradient(to bottom, #470000 80%, #012b2d 100%) !important;
-		opacity: 1.0 !important;
-		box-shadow: none !important;
-		-webkit-box-shadow: none !important;
-		}
+.program_container * {
+    --themeColor-primary: #6c0000;
+    --themeColor-primary-border: #6c0000;
+}
+		
 		</style>
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
@@ -165,14 +79,18 @@
 	</head>
 	<body>
 		<div id="imgheader"></div>
-		<div aria-live='polite' class='guidedtrack program_container col-md-8 col-md-offset-2' data-environment='production' id='ehxbhjl'>
+		<div aria-live='polite' class='guidedtrack program_container' data-environment='production' id='ehxbhjl'>
+		<div id='program_navigation'>
+			<div id='back-button'></div>
+			<div class='navigation_container'></div>
 			<div id='run-menu'></div>
+		</div>
 			<div class='points'>
 				<div class='total'></div>
 				<div class='change positive'></div>
 			</div>
 			<div class='maintain'></div>
-			<div class='main'></div>
+			<div class='main col-md-8 col-md-offset-2'></div>
 		</div>
 	</body>
 </html>
